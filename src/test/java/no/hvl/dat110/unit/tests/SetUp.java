@@ -4,6 +4,7 @@
 package no.hvl.dat110.unit.tests;
 
 import java.io.IOException;
+import java.rmi.NotBoundException;
 import java.security.NoSuchAlgorithmException;
 
 import no.hvl.dat110.middleware.NodeServer;
@@ -47,7 +48,7 @@ public class SetUp {
 		new NodeServer("process5", 9095);
 	}
 	
-	public void doDistribute() throws NoSuchAlgorithmException, IOException {
+	public void doDistribute() throws NoSuchAlgorithmException, IOException, NotBoundException {
 		// use this node to distribute files to active peers
 		String path = "src/test/resources/files/";														// absolute path to the files
 		String[] files = {"file1.txt","file2.txt","file3.txt","file4.txt","file5.txt"}; // we just limit to 5 files

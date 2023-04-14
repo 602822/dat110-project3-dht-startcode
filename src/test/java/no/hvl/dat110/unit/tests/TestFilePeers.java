@@ -3,7 +3,9 @@ package no.hvl.dat110.unit.tests;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +36,7 @@ class TestFilePeers {
 	}
 
 	@Test
-	void test() throws InterruptedException, RemoteException {
+	void test() throws InterruptedException, RemoteException, NotBoundException, NoSuchAlgorithmException {
 		
 		// retrieve the process stubs to be contacted for finding replicas of file2
 		NodeInterface p3 = Util.getProcessStub("process3", 9093);

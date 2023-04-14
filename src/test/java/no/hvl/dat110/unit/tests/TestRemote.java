@@ -4,7 +4,9 @@ package no.hvl.dat110.unit.tests;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.math.BigInteger;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Set;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -31,7 +33,7 @@ class TestRemote {
 	}
 
 	@Test
-	void test() throws InterruptedException, RemoteException {
+	void test() throws InterruptedException, RemoteException, NotBoundException, NoSuchAlgorithmException {
 		
 		/** This is a client **/
 		/** start -> Client -> update(m) -> p1 -> replicasofm(m)[2,3,4] -> Client -> locatePrimary[2, 3, 4] -> primary=4

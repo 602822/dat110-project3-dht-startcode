@@ -5,7 +5,9 @@ package no.hvl.dat110.unit.tests;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigInteger;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.security.NoSuchAlgorithmException;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -30,7 +32,7 @@ class TestFindSuccessor {
 	}
 
 	@Test
-	void test() throws InterruptedException, RemoteException {
+	void test() throws InterruptedException, RemoteException, NoSuchAlgorithmException, NotBoundException {
 				
 		// retrieve the process stubs to be contacted to resolve a key
 		NodeInterface p1 = Util.getProcessStub("process1", 9091);

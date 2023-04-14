@@ -5,39 +5,39 @@ import java.math.BigInteger;
 import java.rmi.RemoteException;
 
 public class Message implements Serializable {
-	
+
 
 	private static final long serialVersionUID = 1L;
 	private int clock = 0;
 	private BigInteger nodeID;
 	private String nodename;
 	private int port;
-	
+
 	private boolean acknowledged = false;
 	private String filepath;
-	
+
 	private byte[] bytesOfFile; 						// we use bytes here to indicate that we can actually divide the file into byte chunks and send them to different servers
 	private BigInteger hashOfFile;
 	private String nameOfFile;
-	
+
 	/** variable for remote-write protocol*/
 	private boolean primaryServer;
-	
-	
+
+
 	public Message() throws RemoteException {
 		super();
 	}
-	
+
 	public Message(BigInteger nodeID, String nodename, int port) {
 		this.nodeID = nodeID;
 		this.nodename = nodename;
 		this.port = port;
 	}
-	
+
 	public int getClock() {
 		return clock;
 	}
-	
+
 	public void setClock(int clock) {
 		this.clock = clock;
 	}
@@ -143,5 +143,5 @@ public class Message implements Serializable {
 	public void setPrimaryServer(boolean primaryServer) {
 		this.primaryServer = primaryServer;
 	}
-	
+
 }

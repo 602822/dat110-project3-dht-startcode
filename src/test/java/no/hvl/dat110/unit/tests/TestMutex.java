@@ -51,7 +51,8 @@ class TestMutex {
 		String newupdate = "overwrite the content of existing file - i.e. file1";
 		
 		Set<Message> activepeers = fm.requestActiveNodesForFile(filename);  // p1, p2, p4, and p5 are holding file1
-		
+
+		assert p3 != null;
 		p3.multicastReleaseLocks(activepeers); 		// reset all locks before voting for mutual exclusion
 		
 		// request to update the same file will happen concurrently - only one process should get the vote		
